@@ -184,7 +184,7 @@ public final class TransportImpl
      */
     @Override
     public void notifyDisconnect(DisconnectReason reason, String message) {
-        log.info("Disconnected - {}", reason);
+        log.debug("Disconnected - {}", reason);
     }
 
     private void receiveServerIdent() throws IOException {
@@ -206,7 +206,7 @@ public final class TransportImpl
      * @throws IOException If there was an error writing to the outputstream.
      */
     private void sendClientIdent() throws IOException {
-        log.info("Client identity string: {}", clientID);
+        log.debug("Client identity string: {}", clientID);
         connInfo.out.write((clientID + "\r\n").getBytes(IOUtils.UTF8));
         connInfo.out.flush();
     }

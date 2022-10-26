@@ -45,7 +45,7 @@ public class JCERandom
     private final SecureRandom random;
 
     JCERandom() {
-        logger.info("Creating new SecureRandom.");
+        logger.debug("Creating new SecureRandom.");
         long t = System.currentTimeMillis();
         random = new SecureRandom();
         logger.debug("Random creation took {} ms", System.currentTimeMillis() - t);

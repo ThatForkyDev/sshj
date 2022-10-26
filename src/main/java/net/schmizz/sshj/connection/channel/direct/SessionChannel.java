@@ -184,7 +184,7 @@ public class SessionChannel
     public Subsystem startSubsystem(String name)
             throws ConnectionException, TransportException {
         checkReuse();
-        log.info("Will request `{}` subsystem", name);
+        log.debug("Will request `{}` subsystem", name);
         sendChannelRequest("subsystem", true, new Buffer.PlainBuffer().putString(name))
                 .await(conn.getTimeoutMs(), TimeUnit.MILLISECONDS);
         usedUp = true;
