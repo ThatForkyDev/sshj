@@ -159,7 +159,7 @@ public final class TransportImpl
             }
 
 
-            log.info("Server identity string: {}", serverID);
+            log.debug("Server identity string: {}", serverID);
 
         } catch (IOException e) {
             throw new TransportException(e);

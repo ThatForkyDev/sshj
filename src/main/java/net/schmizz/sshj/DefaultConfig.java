@@ -85,15 +85,7 @@ public class DefaultConfig
     }
 
     private String readVersionFromProperties() {
-        try {
-            Properties properties = new Properties();
-            properties.load(DefaultConfig.class.getClassLoader().getResourceAsStream("sshj.properties"));
-            String property = properties.getProperty("sshj.version");
-            return "SSHJ_" + property.replace('-', '_'); // '-' is a disallowed character, see RFC-4253#section-4.2
-        } catch (Exception e) {
-            log.error("Could not read the sshj.properties file, returning an 'unknown' version as fallback.");
-            return "SSHJ_VERSION_UNKNOWN";
-        }
+        return "SSHJ_2.8.0";
     }
 
     @Override
